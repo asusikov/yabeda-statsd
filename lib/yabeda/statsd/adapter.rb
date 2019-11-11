@@ -7,14 +7,10 @@ module Yabeda
   module Statsd
     # Adapter for statsd
     class Adapter < BaseAdapter
-      attr_reader :dogstatsd
+      attr_reader :connection
 
-      def initialize(logger: nil)
-        @dogstatsd = ::Datadog::Statsd.new(
-          Yabeda::Statsd.config.statsd_host,
-          Yabeda::Statsd.config.statsd_port,
-          logger: logger
-        )
+      def initialize(connection:)
+        @connection = connection
       end
 
       def register_counter!(_)
@@ -23,7 +19,7 @@ module Yabeda
 
       def perform_counter_increment!(counter, tags, increment)
         tags = Yabeda::Statsd::Tags.build(tags)
-        dogstatsd.increment(build_name(counter), by: increment, tags: tags)
+        connection.increment(build_name(counter), by: increment, tags: tags)
       end
 
       def register_gauge!(_)
@@ -32,7 +28,7 @@ module Yabeda
 
       def perform_gauge_set!(gauge, tags, value)
         tags = Yabeda::Statsd::Tags.build(tags)
-        dogstatsd.gauge(build_name(gauge), value, tags: tags)
+        connection.gauge(build_name(gauge), value, tags: tags)
       end
 
       def register_histogram!(_)
@@ -41,7 +37,7 @@ module Yabeda
 
       def perform_histogram_measure!(historam, tags, value)
         tags = Yabeda::Statsd::Tags.build(tags)
-        dogstatsd.histogram(build_name(historam), value, tags: tags)
+        connection.histogram(build_name(historam), value, tags: tags)
       end
 
       private

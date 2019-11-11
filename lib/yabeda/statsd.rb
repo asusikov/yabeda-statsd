@@ -23,7 +23,12 @@ module Yabeda
       end
 
       def start(logger: nil)
-        adapter = Yabeda::Statsd::Adapter.new(logger: logger)
+        connection = ::Datadog::Statsd.new(
+          Yabeda::Statsd.config.statsd_host,
+          Yabeda::Statsd.config.statsd_port,
+          logger: logger
+        )
+        adapter = Yabeda::Statsd::Adapter.new(connection: connection)
         Yabeda.register_adapter(:statsd, adapter)
         adapter
       end
