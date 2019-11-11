@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require "yabeda/statsd/version"
+require "yabeda/statsd/adapter"
+require "yabeda/statsd/config"
+require "yabeda/statsd/tags"
 
 module Yabeda
   # Namespace for Statsd adapter
