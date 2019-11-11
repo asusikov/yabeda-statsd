@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = "yabeda-statsd"
   spec.version       = Yabeda::Statsd::VERSION
   spec.authors       = ["Alexander Susikov <@asusikov>"]
-  spec.email         = ["susikov.susikov@gmail.com"]
+  spec.email         = ["susikov.alexander@gmail.com"]
 
   spec.summary       = "Statsd adapter for reporting metrics from Yabeda suite"
   spec.description = <<~DESCRIPTION
