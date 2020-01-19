@@ -9,6 +9,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.0)
     concurrent-ruby (1.1.5)
     diff-lcs (1.3)
     dogstatsd-ruby (4.5.0)
@@ -18,6 +19,11 @@ GEM
     dry-core (0.4.9)
       concurrent-ruby (~> 1.0)
     dry-initializer (3.0.3)
+    jaro_winkler (1.5.4)
+    parallel (1.19.1)
+    parser (2.7.0.2)
+      ast (~> 2.4.0)
+    rainbow (3.0.0)
     rake (12.3.3)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
@@ -32,6 +38,17 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
+    rubocop (0.79.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.7.0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-rspec (1.37.1)
+      rubocop (>= 0.68.1)
+    ruby-progressbar (1.10.1)
+    unicode-display_width (1.6.1)
     yabeda (0.3.0)
       concurrent-ruby
       dry-initializer
@@ -43,6 +60,8 @@ DEPENDENCIES
   bundler (~> 1.16)
   rake (~> 12.0)
   rspec (~> 3.0)
+  rubocop
+  rubocop-rspec
   yabeda-statsd!
 
 BUNDLED WITH
