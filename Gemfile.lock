@@ -3,7 +3,7 @@ PATH
   specs:
     yabeda-statsd (0.1.2)
       dogstatsd-ruby
-      dry-configurable
+      dry-configurable (~> 0.8)
       yabeda
 
 GEM
