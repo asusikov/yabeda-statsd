@@ -17,14 +17,6 @@ module Yabeda
         Yabeda::Statsd::Config.config
       end
 
-      def global_label(label_name, value:)
-        global_labels[label_name] = value
-      end
-
-      def global_labels
-        @global_labels ||= Concurrent::Hash.new
-      end
-
       def start(logger: nil)
         connection = ::Datadog::Statsd.new(
           Yabeda::Statsd.config.statsd_host,
