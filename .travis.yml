@@ -8,3 +8,6 @@ rvm:
 - 2.4.5
 - 2.3.8
 before_install: gem install bundler -v 1.17.0
+script:
+  - bundle exec rubocop
+  - bundle exec rake
