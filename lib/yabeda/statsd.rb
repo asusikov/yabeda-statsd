@@ -21,7 +21,7 @@ module Yabeda
         connection = ::Datadog::Statsd.new(
           Yabeda::Statsd.config.statsd_host,
           Yabeda::Statsd.config.statsd_port,
-          logger: logger
+          logger: logger,
         )
         adapter = Yabeda::Statsd::Adapter.new(connection: connection)
         Yabeda.register_adapter(:statsd, adapter)

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'yabeda/base_adapter'
-require 'datadog/statsd'
+require "yabeda/base_adapter"
+require "datadog/statsd"
 
 module Yabeda
   module Statsd
@@ -43,7 +43,7 @@ module Yabeda
       private
 
       def build_name(metric)
-        [metric.group, metric.name, metric.unit].compact.join('_').to_sym
+        [metric.group, metric.name, metric.unit].compact.join("_").to_sym
       end
     end
   end
