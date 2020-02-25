@@ -24,6 +24,27 @@ Or install it yourself as:
 
 Define Yabeda metrics to collect. Refer to [Yabeda documentation](https://github.com/yabeda-rb/yabeda) for instruction on how to configure and use Yabeda metrics.
 
+### Configure adapter
+
+You can configure host and port of metric's server, interval of collecting metrics via initializer.
+
+Example of `initializers/yabeda_statsd.rb` file:
+
+```ruby
+Yabeda::Statsd::Config.configure do |config|
+  config.statsd_host = 'http://own.metric.server'
+  config.statsd_port = '9125'
+end
+```
+
+### Start the adapter
+
+To start collecting and sending your metrics to your metric's server run:
+
+```ruby
+Yabeda::Statsd.start
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
