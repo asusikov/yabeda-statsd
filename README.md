@@ -45,6 +45,10 @@ To start collecting and sending your metrics to your metric's server run:
 Yabeda::Statsd.start
 ```
 
+## Alternatives
+
+View the [list of available monitoring system adapters](https://github.com/yabeda-rb/yabeda#available-monitoring-system-adapters)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
