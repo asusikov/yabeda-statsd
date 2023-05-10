@@ -30,10 +30,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "dogstatsd-ruby"
-  spec.add_dependency "dry-configurable", "~> 0.8.0"
+  spec.add_dependency "dry-configurable", "~> 1.0"
   spec.add_dependency "yabeda"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
+  spec.add_development_dependency "bundler", "~> 2.4"
   spec.add_development_dependency "rake", "~> 12.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
