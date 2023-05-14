@@ -12,8 +12,8 @@ module Yabeda
       COLLECT_INTERVAL = 60 * SECOND
 
       setting :statsd_host
-      setting :statsd_port, "9125"
-      setting :collect_interval, COLLECT_INTERVAL
+      setting :statsd_port, default: "9125"
+      setting :collect_interval, default: COLLECT_INTERVAL
     end
   end
 end
